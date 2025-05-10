@@ -1,17 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-todolist',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css'
 })
-export class TodolistComponent {
+export class TodolistComponent implements OnInit{
 
-  onSubmit(forms: NgForm)
+  Taskarray = [{taskName : 'brushteeth', isCompleted : false}];
+
+  constructor () { }
+
+  ngOnInit(): void {
+    
+  }
+
+  onSubmit(form: NgForm)
   {
-
+    console.log(form)
   }
 }

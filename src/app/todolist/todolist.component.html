@@ -7,7 +7,7 @@
     <form (ngSubmit)="onSubmit(taskform)" #taskform="ngForm">
     <div class="form-group">
       <label for="task">Task </label>
-      <input type="email" class="form-control" id="task" placeholder="Enter Task" ngModel name="task">
+      <input type="text" class="form-control" id="task" placeholder="Enter Task" ngModel name="task">
       <small id="ErrorMessage" class="form-text text-danger">Required Field</small>
     </div>
       
@@ -17,20 +17,19 @@
 
 <table class="table">
   <thead>
-    <tr>
-      
+    <tr>      
       <th scope="col">Task</th>
       <th scope="col">Completed</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
+
   <tbody>
-    <tr>
-      <td>Mark</td> 
+    <tr *ngFor="let t of Taskarray">
+      <td>{{t.taskName}}</td> 
       <td><input id="myCheckbox" type="checkbox"></td>
       <td><button class="btn btn-danger btn-sm">Delete</button></td>
-    </tr>
-       
+    </tr>       
   </tbody>
 </table>
 

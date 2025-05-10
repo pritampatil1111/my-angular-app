@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TodolistComponent } from './todolist/todolist.component';
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,TodolistComponent],
