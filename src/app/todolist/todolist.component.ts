@@ -19,8 +19,21 @@ export class TodolistComponent implements OnInit{
     
   }
 
-  onSubmit(form: NgForm)
-  {
-    console.log(form)
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.Taskarray.push({
+        taskName: form.controls['task'].value,
+        isCompleted: false
+      });
+      form.reset();
+    }
   }
+
+
+  onDelete(index:number){
+    console.log(index);
+
+    this.Taskarray.splice(index, 1);
+  }
+  
 }
