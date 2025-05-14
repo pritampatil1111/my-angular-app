@@ -29,11 +29,12 @@ export class TodolistComponent implements OnInit{
     }
   }
 
-
   onDelete(index:number){
     console.log(index);
 
     this.Taskarray.splice(index, 1);
   }
   
+
+  public name = "Pritam";
 }

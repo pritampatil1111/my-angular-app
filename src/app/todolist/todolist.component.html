@@ -7,11 +7,22 @@
     <form (ngSubmit)="onSubmit(taskform)" #taskform="ngForm">
     <div class="form-group">
       <label for="task">Task </label>
-      <input type="text" class="form-control" id="task" placeholder="Enter Task" ngModel name="task">
+      <input 
+      type="text" 
+      class="form-control" 
+      id="task" 
+      placeholder="Enter Task" 
+      ngModel name="task"
+      required
+       #taskInput="ngModel" />
+       
       <small id="ErrorMessage" class="form-text text-danger">Required Field</small>
     </div>
       
-    <button  id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+    <button [disabled]="taskform.invalid" 
+    id="submitButton"
+     type="submit"
+      class="btn btn-primary">Submit</button>
   </form>
   <hr>
 
@@ -32,4 +43,8 @@
     </tr>       
   </tbody> 
 </table>
+
 </div>
+
+<hr>
+
